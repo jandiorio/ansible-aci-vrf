@@ -1,0 +1,18 @@
+---
+# tasks file for ansible-aci-vrf
+#
+#   Context (VRF) fvCtx
+#
+    - name: Add (or delete) the contract
+      aci_contract:
+        hostname: '{{ inventory_hostname }}'
+        username: '{{ apic.username }}'
+        private_key: '{{ playbook_dir }}/files/{{ apic.username }}.key'
+        validate_certs: '{{ validate_certs }}'
+        state: '{{ desired_state }}'
+        #
+        tenant: '{{ fvTenant.name }}'
+        vrf: '{{ fvCtx.name }}'
+        descr: '{{ fvCtx.descr }}'
+        policy_control_preference: '{{ fvCtx.pcEnfPref }}'
+        policy_control_direction: '{{ fvCtx.pcEnfDir }}'
