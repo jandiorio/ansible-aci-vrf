@@ -3,8 +3,8 @@
 #
 #   Context (VRF) fvCtx
 #
-    - name: Add (or delete) the contract
-      aci_contract:
+    - name: VRF
+      aci_vrf:
         hostname: '{{ inventory_hostname }}'
         username: '{{ apic.username }}'
         private_key: '{{ playbook_dir }}/files/{{ apic.username }}.key'
