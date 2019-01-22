@@ -1,9 +1,9 @@
 ---
 # tasks file for ansible-aci-vrf
 #
-#   Context (VRF) fvCtx
+#   Context fvCtx (VRF) 
 #
-    - name: VRF
+    - name: fvCtx (VRF)
       aci_vrf:
         hostname: '{{ inventory_hostname }}'
         username: '{{ apic.username }}'
