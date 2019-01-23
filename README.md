@@ -45,7 +45,7 @@ Example Playbook
 License
 -------
 
-This solution is Copyright (c) 2019 World Wide Technology, Inc. All rights reserved. A copy of the applicable end user license agreement for this solution can be obtained by emailing AutomationTeam@wwt.com.
+This solution is Copyright (c) 2019 World Wide Technology. All rights reserved. A copy of the applicable end user license agreement for this solution can be obtained by emailing AutomationTeam@wwt.com.
 
 Author Information
 ------------------
