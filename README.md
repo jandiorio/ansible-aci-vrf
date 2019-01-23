@@ -1,38 +1,53 @@
 ansible-aci-vrf
 ===============
 
-A brief description of the role goes here.
+Manage contexts or VRFs on Cisco ACI fabrics. Each context is a private network associated to a tenant, i.e. VRF.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Use the `ansible-doc` module for variables defined by the following modules: 
+```
+  aci_vrf
+```
+Use the APIC Object Store Browser http://*APIC-ManagementIP*/visore.html and filter on the following classes:
+```
+  fvCtx
+```
+APIC Management Information Model Reference is available at https://developer.cisco.com/docs/apic-mim-ref/.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yaml
+    - name: Configure ACI
+      hosts: APIC
+      connection: local
+      gather_facts: no
 
-    - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+        - ansible-aci-include-data
+        - ansible-aci-credentials  
+        - ansible-aci-tenant  
+        - ansible-aci-vrf
+```
 
 License
 -------
 
-BSD
+This solution is Copyright (c) 2019 World Wide Technology, Inc. All rights reserved. A copy of the applicable end user license agreement for this solution can be obtained by emailing AutomationTeam@wwt.com.
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+joel.king@wwt.com
