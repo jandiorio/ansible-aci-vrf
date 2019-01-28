@@ -1,0 +1,21 @@
+---
+#
+# YAML formatted input to ansible-aci-contract-filter
+#
+
+# Assume the tenant is defined previously
+#
+# Example of creating a list of VRFs in YAML for Blue Green testing
+#
+  vrfs:
+    - fvCtx:
+        name: GREEN
+        descr: vrf GREEN
+        pcEnfPref: enforced                                    # policy control preference
+        pcEnfDir: egress                                       # policy control direction
+
+    - fvCtx: 
+        name: BLUE
+        descr: vrf BLUE
+        pcEnfPref: enforced                                    # policy control preference
+        pcEnfDir: egress                                       # policy control direction
