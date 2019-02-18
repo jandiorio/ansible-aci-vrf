@@ -1,0 +1,19 @@
+---
+# tasks file for ansible-aci-vrf
+#
+#
+    - name: Context VRF (fvCtx)
+      aci_vrf:
+        hostname: '{{ inventory_hostname }}'
+        username: '{{ apic.username }}'
+        private_key: '{{ playbook_dir }}/files/{{ apic.username }}.key'
+        validate_certs: '{{ validate_certs }}'
+        timeout: '{{ timeout }}'
+        use_ssl: '{{ use_ssl }}'
+        state: '{{ desired_state }}'
+        #
+        tenant: '{{ fvTenant.name }}'
+        vrf: '{{ fvCtx.name }}'
+        descr: '{{ fvCtx.descr }}'
+        policy_control_preference: '{{ fvCtx.pcEnfPref }}'
+        policy_control_direction: '{{ fvCtx.pcEnfDir }}'
